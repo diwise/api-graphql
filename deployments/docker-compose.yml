@@ -17,7 +17,7 @@ services:
 
 
   deviceregistry:
-    image: "iot-for-tillgenglighet/iot-device-registry:latest"
+    image: "diwise/iot-device-registry:latest"
     restart: always
     environment:
       SERVICE_PORT: "8484"
@@ -27,7 +27,7 @@ services:
 
 
   problemreport:
-    image: "iot-for-tillgenglighet/api-problemreport:latest"
+    image: "diwise/api-problemreport:latest"
     restart: always
     depends_on:
       - rabbitmq
@@ -48,7 +48,7 @@ services:
       - "8383"
     
   snowdepth:
-    image: 'iot-for-tillgenglighet/api-snowdepth:latest'
+    image: 'diwise/api-snowdepth:latest'
     restart: always
     depends_on:
       - rabbitmq
@@ -70,7 +70,7 @@ services:
 
 
   temperature:
-    image: 'iot-for-tillgenglighet/api-temperature:latest'
+    image: 'diwise/api-temperature:latest'
     restart: always
     depends_on:
       - rabbitmq
@@ -92,7 +92,7 @@ services:
 
 
   postgresdb:
-    image: 'iot-for-tillgenglighet/testdb-postgres:latest'
+    image: 'diwise/testdb-postgres:latest'
     restart: always
     environment:
       POSTGRES_DB: 'federation-test-db'
