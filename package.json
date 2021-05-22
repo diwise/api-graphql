@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iot-for-tillgenglighet/api-graphql.git"
+    "url": "git+https://github.com/diwise/api-graphql.git"
   },
   "keywords": [
     "graphql",
@@ -18,9 +18,9 @@
   "author": "Isak Styf <isak.styf@masarinconsulting.se>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/iot-for-tillgenglighet/api-graphql/issues"
+    "url": "https://github.com/diwise/api-graphql/issues"
   },
-  "homepage": "https://github.com/iot-for-tillgenglighet/api-graphql#readme",
+  "homepage": "https://github.com/diwise/api-graphql#readme",
   "dependencies": {
     "@apollo/gateway": "0.28.1",
     "apollo-server": "2.24.0",
