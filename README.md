@@ -3,8 +3,13 @@ A GraphQL API to provide IoT-Hub data to clients
 
 # Build and tag with Docker
 
-`docker build -f deployments/Dockerfile -t diwise/api-graphql:latest .`
+```bash
+docker build -f deployments/Dockerfile -t diwise/api-graphql:latest .
+```
 
-# Run with Docker
+# Build and run with Docker Compose
 
-`docker run -it -p 8080:8080 diwise/api-graphql:latest`
+```bash
+docker compose -f deployments/docker-compose.yaml build
+docker compose -f deployments/docker-compose.yaml up
+```
