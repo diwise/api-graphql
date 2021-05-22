@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/nodejs-10
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /opt/diwise
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
