@@ -1,4 +1,4 @@
-FROM node:lts
+FROM registry.access.redhat.com/ubi8/nodejs-10
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -15,5 +15,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 4000
+EXPOSE 8080
+USER 1001
+
 CMD [ "node", "src/gateway.js" ]
