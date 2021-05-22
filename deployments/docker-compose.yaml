@@ -17,9 +17,15 @@ services:
 
 
   deviceregistry:
-    image: "diwise/iot-device-registry:latest"
+    image: 'ghcr.io/diwise/iot-device-registry:prod-80fc3d1307891da2494602f8b3766bcef59a7811'
     restart: always
     environment:
+      DIWISE_SQLDB_HOST: 'postgresdb'
+      DIWISE_SQLDB_USER: 'testuser'
+      DIWISE_SQLDB_NAME: 'federation-test-db'
+      DIWISE_SQLDB_PASSWORD: 'testpass'
+      DIWISE_SQLDB_SSLMODE: 'disable'
+      RABBITMQ_HOST: "rabbitmq"
       SERVICE_PORT: "8484"
 
     ports:
@@ -27,7 +33,7 @@ services:
 
 
   problemreport:
-    image: "diwise/api-problemreport:latest"
+    image: "ghcr.io/diwise/api-problemreport:prod-4f36034ad12626387d3f6cb2ebb4262cbc355412"
     restart: always
     depends_on:
       - rabbitmq
@@ -48,7 +54,7 @@ services:
       - "8383"
     
   snowdepth:
-    image: 'diwise/api-snowdepth:latest'
+    image: 'ghcr.io/diwise/api-snowdepth:prod-da13a4756404f6a8c6b55fe646a9fc9fcd92570b'
     restart: always
     depends_on:
       - rabbitmq
@@ -70,7 +76,7 @@ services:
 
 
   temperature:
-    image: 'diwise/api-temperature:latest'
+    image: 'ghcr.io/diwise/api-temperature:prod-4bbd88ac59faa7a69b4882d533c8f7c289850646'
     restart: always
     depends_on:
       - rabbitmq
@@ -92,7 +98,7 @@ services:
 
 
   postgresdb:
-    image: 'diwise/testdb-postgres:latest'
+    image: 'ghcr.io/diwise/test-db-postgresql:prod-824e7cffd65dd3766c88441a48cffd5b2acd55f2'
     restart: always
     environment:
       POSTGRES_DB: 'federation-test-db'
